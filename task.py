@@ -8,22 +8,22 @@ class Solution:
             if number > target: #provided numbers are sorted, so if target is lower than number, there will be no occurences 
                 break
             elif number == target:
-                position.append(counter)
+                position.append(counter) #add target index to array
                 counter = counter + 1
             else:
                 counter = counter + 1
         if not position:
-            position.append(-1)
+            position.append(-1) #insert -1 value if there is no target occurences
         return position
         
-    def displayOutput(self, nums: List[int]):
-        if -1 in nums:
+    def displayOutput(self, nums: List[int]): #function to display results
+        if -1 in nums: #Custom message if there is no numbers
             print("No element found")
         else:
             print("Element found at the: ")
             for num in nums:
                 print(num+1, "(index", num,")")
-            if len(nums) == 1:
+            if len(nums) == 1: #if there is one element, use singular form
                 print("position")
             else:
                 print("positions")
